@@ -1,0 +1,108 @@
+<div class="maindiv">
+    <div class="container container-table">
+        <div class="panel panel-primary fill" style="padding:0px; margin:0px;">
+            <div class="panel-heading">
+                <span class="glyphicon glyphicon-comment btn-sm"></span> Hi {{chatCaption}}
+                <div class="btn-group pull-right">
+                    <div id="participantBtn" class="dropdown btn-group">
+                        <button  (mouseover)="updateParticipants()" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" title="Available Participants">
+                                        <span class="glyphicon glyphicon-user"></span>
+                                        &nbsp;&nbsp;&nbsp;
+                                        <font size="2">Participants</font>
+                        </button>
+                        <ul id="mydropdown" class="dropdown-menu slidedown" style="min-width:240px;">
+                
+                           <li *ngFor="let usr of userloggedin"><a>{{usr}}<img class="pull-right" style="margin-top:5px;" src="images/online.png"/></a></li>                   </ul>
+                    </div>
+                    <div class="dropdown btn-group" style="margin:1px;">
+                    </div>
+                    <div class="dropdown btn-group" style="margin:1px;">
+                        <button type="button" class="btn btn-info btn-sm" (click)="signout()">
+                            <font size="2">Sign out</font></button>
+                    </div>
+                        
+                </div>
+            </div>
+            <div id="colltool">
+                <div id="div1">
+                    <div class="scroll2 panel-body" id="chat">
+                        <ul class="chat msg_container_base" id="messages">
+
+
+                        </ul>
+                    </div>
+                </div>
+                <div id="div2" style="display:none; overflow:hidden;">
+                    <div id="flexCanvasContainer">
+                        <div id="buttons">
+                            <!--<input type="color" style="height: 23px" id="color" value="#000000" (change)="change()" title="Choose Colour">
+                            <a id="eraser" (click)="eraser()" style="width: 21px; height:21px ; border: 1px solid black" title="eraser"></a>-->
+
+
+                            <input type="color" id="color" value="#000000" (change)="change()" title="Choose Colour">
+                            <button class="clicked" id="pencil" style="width: 32px; background: url('images/pencil_cursor.cur');" title="pencil"></button>
+                            <button id="eraser" style="width: 32px; background: url('images/eraser_cursor.png');" title="eraser"></button>
+                            <button id="line" style="width: 32px; background: url('images/line_cursor.png');" title="line"></button>
+                            <button id="rectangle" style="width: 32px; background: url('images/rectangle.png');" title="rectangle"></button>
+                            <button id="circle" style="width: 32px; background: url('images/circle.png');" title="circle"></button>
+
+                            <a id="download_canvas" href=""><button class="btn btn-default btn-info btn-sm" (click)="downloadCanvas()" style="float:right;" title="Download">
+                                <span class="glyphicon glyphicon-floppy-disk"></span></button></a>
+                            <button id="clearCanvas" class="btn-primary" title="clear">clear</button>
+
+
+
+
+
+                        </div>
+                        <div id="canvasParent">
+                            <!--   <canvas id="drawing" (mousedown)="onMouseButtonDown($event)" (mousemove)="onMouseMove($event)"
+                     (mouseup)="onMouseButtonUp($event)" (mouseout)="onMouseOut($event)"></canvas>
+                                -->
+
+                            <canvas id="drawing"  width="500px" height="500px" (mousedown)="onMouseButtonDown($event)"
+                                (mousemove)="onMouseMove($event)" (mouseup)="onMouseButtonUp($event)"></canvas>
+
+                            <canvas id="tmp_drawing" width="500px" height="500px" (mousedown)="onMouseButtonDown($event)"
+                                (mousemove)="onMouseMove($event)" (mouseup)="onMouseButtonUp($event)"></canvas>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div id="div3" style="display:none; overflow:hidden;">
+
+                    <div id="buttons2">
+                        <label class="pull-left" style="margin: 5px;">File Editor</label>
+                        <a id="download_file" href=""><button class="btn btn-default btn-info btn-sm" (click)="downloadFile()" style="float:right;" title="Download">
+                                <span class="glyphicon glyphicon-floppy-disk"></span></button></a>
+                        <button id="clearEditor" class="btn-primary" style="float:right;" title="clear">clear</button>
+                    </div>
+
+                    <textarea class="scroll2" id="editFile" (keyup)="onKeyPress($event)" style="resize:none; overflow: scroll;"></textarea>
+                </div>
+            </div>
+
+            <div class="panel-footer" id="message">
+                <div class="input-group">
+                    <input id="btn-input" type="text" class="form-control input-sm" (keyup)="onKeyEnter($event)" placeholder="Type your message here...">
+                    <span class="input-group-btn">
+                                    <button class="btn btn-info btn-sm" id="btn-chat1" (click)="msgclick()" title="Send" disabled>
+                                        <span class="glyphicon glyphicon-share-alt"></span></button>
+                    </span>
+                    <span class="input-group-btn">
+                                <button class="btn btn-primary btn-sm" (click)="Onclick1()" id="btn-chat2" title="Draw">
+                                    <span class="glyphicon glyphicon-pencil"></span></button>
+                    </span>
+                    <span class="input-group-btn">
+                               <button class="btn btn-primary btn-sm" (click)="Onclick2()" id="btn-chat3" title="Edit File">
+                                   <span class="glyphicon glyphicon-file"></span></button>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<form id="submit" action="http://10.44.27.15:4004" style="display:hidden">
+</form>

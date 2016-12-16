@@ -1,0 +1,82 @@
+.panel-heading {
+    padding: 5px 15px;
+	}
+
+	.panel-footer {
+	padding: 1px 15px;
+	color: #A0A0A0;
+	}
+
+.ng-invalid{
+    
+    border:1px solid red;
+}
+
+video { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+   background-size: cover;
+  transition: 1s opacity;
+}
+
+
+
+/*
+-----------------sanju's css-----------------
+*/
+
+.btn-info{
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#1DE9B6),to(#00BFA5));
+    border-color: #00BFA5;
+    background-color: #00BFA5;
+
+}
+
+
+.btn-primary, .btn-primary:focus, .btn-primary.active, .btn-primary:active{
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#1DE9B6),to(#00BFA5));
+    border-color: #00BFA5;
+    background-color: #00BFA5;
+
+}
+
+.btn-info:focus, .btn-info:hover{
+    background-color: #00BFA5;
+    border-color: #00BFA5;
+}
+
+.btn-info.active, .btn-info:active, .open>.dropdown-toggle.btn-info, .btn-info:active:focus,.open>.dropdown-toggle.btn-info:hover,.open>.dropdown-toggle.btn-info:active, .open>.dropdown-toggle.btn-info:focus, .btn-primary:active:focus, .btn-primary:active:hover, .btn-primary:hover {
+    background-color: #00BFA5;
+    border-color: #00BFA5;
+}
+
+button:focus {outline:0 !important;}
+
+
+
+* {
+     user-select: none;
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+}
+
+
+.form-control:focus{
+    border-color: #1DE9B6;
+}
+
+
+#wrongUser{
+    display: none;
+    color: red;
+    padding: 0px;
+}
